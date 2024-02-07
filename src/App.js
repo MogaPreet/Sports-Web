@@ -2,9 +2,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-          <span style={{color: 'white',textAlign: 'center'}}>sports web</span>
+          <span style={{color: 'white'}}>Subscribe Zainkeepscode</span>
     </div>
-
   );
 }
 
