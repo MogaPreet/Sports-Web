@@ -5,40 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympia 2024</title>
     <style>
-        body {
+          body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: url('https://i.pinimg.com/736x/a1/98/1f/a1981fb43c544b5a22f78719944dba53.jpg') repeat;
-            background-size: auto;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(177, 176, 135, 0.5));
+            background-size: cover;
             margin: 0;
-            padding: 20px;
+            /* padding: 20px; */
             text-align: center;
         }
-
+        li:hover {
+            transform: translateY(5px); /* Move the card downward on hover */
+        }
         h2 {
-            color: #1f1d1d;
+            color: #fff;
             font-weight: bold;
             font-size: 2.5em;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+            /* More transparent for a glassy effect */
+            padding: 10px; /* Padding for better visibility */
+            position: sticky;
+            top: 0;
+            z-index: 100; /* Higher z-index to stay above other elements */
+            /* Glassy background effect */
+            /* transition: background-color 0.3s ease-in-out; Added transition for smooth color change */
         }
 
+        
+       
         ul {
             padding: 0;
             list-style-type: none;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             grid-gap: 20px;
+            padding: 20px;
             justify-content: center;
         }
 
         li {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: #584f4f; /* Black background color instead of shadow */
+            color: #fff; /* White text color for better contrast */
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(8px);
-        }
 
+            box-shadow: 0 10px 1px rgba(0, 0, 0, 0.5); /* Adjusted box-shadow */
+        }
         a {
             text-decoration: none;
             color: #3498db;
@@ -48,16 +60,37 @@
         a:hover {
             text-decoration: underline;
         }
-
+        .logo {
+            width: 200px; /* Adjust the width as needed */
+            height: auto;
+            margin-bottom: -90px;
+            margin-top: -50px;
+           
+        }
         .icon {
             font-size: 2em;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
         }
     </style>
 </head>
 <body>
+  <script>
+    window.onscroll = function() { stickyHeader() };
 
-<h2>🏆 Sports Registration | Olympia 2024</h2>
+    function stickyHeader() {
+        var header = document.getElementById("stickyHeader");
+        if (window.pageYOffset > 50) {
+            header.style.backgroundColor = "rgba(255, 255, 255, 0.9)";
+            header.style.color = "#000";
+        } else {
+            header.style.backgroundColor = "transparent";
+            header.style.color = "#fff";
+        }
+    }
+</script>
+<img src="assets/images/COMING SOON_20240214_125915_0000.png" alt="Event Logo" class="logo">
+
+<h2 id="stickyHeader">🏆 Olympia 2024</h2>
 
 <ul>
     <li>
