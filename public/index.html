@@ -5,71 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympia 2024</title>
     <style>
-          body {
+         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(177, 176, 135, 0.5));
+            background: linear-gradient(to bottom, rgba(255, 223, 92, 0.8), rgba(255, 223, 92, 0.5));
             background-size: cover;
             margin: 0;
-            /* padding: 20px; */
+          
             text-align: center;
         }
-        li:hover {
-            transform: translateY(5px); /* Move the card downward on hover */
-        }
-        h2 {
-            color: #fff;
-            font-weight: bold;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
-            /* More transparent for a glassy effect */
-            padding: 10px; /* Padding for better visibility */
-            position: sticky;
-            top: 0;
-            z-index: 100; /* Higher z-index to stay above other elements */
-            /* Glassy background effect */
-            /* transition: background-color 0.3s ease-in-out; Added transition for smooth color change */
-        }
-
-        
        
+
+
+
+@keyframes shadows {
+  0% {
+    text-shadow: none;
+  }
+  10% {
+    transform: translate(-3px, -3px);
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  20% {
+    transform: translate(-6px, -6px);
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  30% {
+    transform: translate(-9px, -9px);
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  40% {
+    transform: translate(-12px, -12px);
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  50% {
+    transform: translate(-12px, -12px);
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  60% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  70% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  80% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  90% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+@import url('https://fonts.googleapis.com/css?family=Sarpanch:900');
+
+/* 
+h2 {
+ 
+  grid-area: text;
+  font-family: 'Sarpanch', sans-serif;
+  font-size: 15vmin;
+  margin: 0;
+  position: sticky;
+  padding: 30px;
+  color: #1d9099;
+  text-transform: uppercase;
+  text-shadow: 2vmin 1vmin 0 #E79C10, -2vmin -1vmin 0 #D53A33;
+} */
+
         ul {
             padding: 0;
             list-style-type: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-gap: 20px;
+            display: flex;
             padding: 20px;
-            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: row; /* Display cards in a vertical layout */
+            align-items: center; /* Center cards horizontally */
         }
 
         li {
-            background-color: #584f4f; /* Black background color instead of shadow */
+            background-color: #000; /* Black background color instead of shadow */
             color: #fff; /* White text color for better contrast */
-            padding: 20px;
+            padding: 0px;
+            padding-bottom: 20px;
+            margin: 10px;
             border-radius: 12px;
-
-            box-shadow: 0 10px 1px rgba(0, 0, 0, 0.5); /* Adjusted box-shadow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Adjusted box-shadow for a more prominent effect */
+            width: calc(25% - 20px);
+            transition: transform 0.3s ease-in-out; /* Added transition for smooth hover effect */
+            text-align: center;
+            
+            
         }
+
+        li img {
+            width: 100%; /* Make sure the image fills the container */
+            border-radius: 12px 12px 0 0; /* Adjusted border-radius for images */
+            margin-bottom: 20px;
+        }
+
+        li:hover {
+            transform: translateY(-5px); /* Move the card upward on hover */
+        }
+
         a {
             text-decoration: none;
-            color: #3498db;
+            color: #ffffff;
             font-weight: bold;
         }
 
         a:hover {
             text-decoration: underline;
         }
+
         .logo {
-            width: 200px; /* Adjust the width as needed */
+            width: 300px; /* Adjust the width as needed */
             height: auto;
-            margin-bottom: -90px;
-            margin-top: -50px;
-           
+            margin-bottom: -100px;
+            margin-top: -100px;
         }
-        .icon {
-            font-size: 2em;
-            margin-bottom: 0px;
+
+        /* Media Query for smaller screens */
+        @media (max-width: 600px) {
+            li {
+                width: 80%; /* Adjusted width for smaller screens */
+            }
+            ul{
+                flex-direction: column;
+            }
+            h2{
+                font-size: 5vmin;
+            }
         }
     </style>
 </head>
@@ -89,49 +165,71 @@
     }
 </script>
 <img src="assets/images/COMING SOON_20240214_125915_0000.png" alt="Event Logo" class="logo">
+<!-- 
+    <h2 id="stickyHeader">Olympia 2024</h2> -->
 
-<h2 id="stickyHeader">🏆 Olympia 2024</h2>
+
 
 <ul>
     <li>
-        <span class="icon">🎮</span>
-        <strong>E-sport BGMI:</strong> <a href="https://forms.gle/Seg6x2xXFzKDgVsn9" target="_blank">Register</a>
+        <a href="https://forms.gle/Seg6x2xXFzKDgVsn9" target="_blank">
+            <img src="assets/images/E-sport BGMI.png" alt="BGMI Esports">
+            <strong>E-sport BGMI:</strong> Register
+        </a>
     </li>
     <li>
-        <span class="icon">🏸</span>
-        <strong>Badminton:</strong> <a href="https://forms.gle/HBkPSBfXhG6BsNLH6" target="_blank">Register</a>
+        <a href="https://forms.gle/HBkPSBfXhG6BsNLH6" target="_blank">
+            <img src="assets/images/Badminton.png" alt="Badminton">
+            <strong>Badminton:</strong> Register
+        </a>
     </li>
     <li>
-        <span class="icon">🏐</span>
-        <strong>Volleyball:</strong> <a href="https://forms.gle/2kccAyNFs17tbM379" target="_blank">Register</a>
+        <a href="https://forms.gle/2kccAyNFs17tbM379" target="_blank">
+            <img src="assets/images/Volleyball.png" alt="Volleyball">
+            <strong>Volleyball:</strong> Register
+        </a>
     </li>
     <li>
-        <span class="icon">⚽</span>
-        <strong>Football:</strong> <a href="https://forms.gle/kVSxXJXJ4oCrMXP67" target="_blank">Register</a>
+        <a href="https://forms.gle/kVSxXJXJ4oCrMXP67" target="_blank">
+            <img src="assets/images/Football.png" alt="Football">
+            <strong>Football:</strong> Register
+        </a>
     </li>
     <li>
-        <span class="icon">🏏</span>
-        <strong>Cricket:</strong> <a href="https://forms.gle/Ld3zejzsL6iZWHiZ6" target="_blank">Register</a>
+        <a href="https://forms.gle/Ld3zejzsL6iZWHiZ6" target="_blank">
+            <img src="assets/images/Cricket.png" alt="Cricket">
+            <strong>Cricket:</strong> Register
+        </a>
     </li>
     <li>
-        <span class="icon">🤼</span>
-        <strong>Kabaddi:</strong> <a href="https://forms.gle/eCcWgCJAJiQDVCn98" target="_blank">Register</a>
+        <a href="https://forms.gle/eCcWgCJAJiQDVCn98" target="_blank">
+            <img src="assets/images/Kabaddi.png" alt="Kabaddi">
+            <strong>Kabaddi:</strong> Register
+        </a>
     </li>
     <li>
-        <span class="icon">🎯</span>
-        <strong>Carrom:</strong> <a href="https://forms.gle/y1z4NpfMe5cry2SU8" target="_blank">Register</a>
+        <a href="https://forms.gle/y1z4NpfMe5cry2SU8" target="_blank">
+            <img src="assets/images/Carrom.png" alt="Carrom">
+            <strong>Carrom:</strong> Register
+        </a>
     </li>
     <li>
-        <span class="icon">♟️</span>
-        <strong>Chess:</strong> <a href="https://forms.gle/ni3eEPPvSBFCvs4YA" target="_blank">Register</a>
+        <a href="https://forms.gle/ni3eEPPvSBFCvs4YA" target="_blank">
+            <img src="assets/images/Chess.png" alt="Chess">
+            <strong>Chess:</strong> Register
+        </a>
     </li>
     <li>
-        <span class="icon">🏓</span>
-        <strong>Table Tennis:</strong> <a href="https://forms.gle/5JaDXdEEm7MLQXyo8" target="_blank">Register</a>
+        <a href="https://forms.gle/5JaDXdEEm7MLQXyo8" target="_blank">
+            <img src="assets/images/Table Tennis.png" alt="Table Tennis">
+            <strong>Table Tennis:</strong> Register
+        </a>
     </li>
     <li>
-        <span class="icon">🏋️‍♂️</span>
-        <strong>Powerlifting:</strong> <a href="https://forms.gle/T7JeN2jdFXKcSNdo8" target="_blank">Register</a>
+        <a href="https://forms.gle/T7JeN2jdFXKcSNdo8" target="_blank">
+            <img src="assets/images/Powerlifting.png" alt="Powerlifting">
+            <strong>Powerlifting:</strong> Register
+        </a>
     </li>
 </ul>
 
