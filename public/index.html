@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>Olympia 2024</title>
     <style>
          body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, rgba(255, 223, 92, 0.8), rgba(255, 223, 92, 0.5));
+            background: url("assets/images/bbb.png");
             background-size: cover;
             margin: 0;
-          
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
             text-align: center;
         }
        
@@ -89,18 +94,20 @@ h2 {
             display: flex;
             padding: 20px;
             flex-wrap: wrap;
+            margin-top: 20px;
             flex-direction: row; /* Display cards in a vertical layout */
             align-items: center; /* Center cards horizontally */
         }
 
         li {
-            background-color: #000; /* Black background color instead of shadow */
+            background-color: #E25822; /* Black background color instead of shadow */
             color: #fff; /* White text color for better contrast */
             padding: 0px;
             padding-bottom: 20px;
+            
             margin: 10px;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Adjusted box-shadow for a more prominent effect */
+            box-shadow: 0px 2px 2px 3px #F8E007; /* Adjusted box-shadow for a more prominent effect */
             width: calc(25% - 20px);
             transition: transform 0.3s ease-in-out; /* Added transition for smooth hover effect */
             text-align: center;
@@ -146,11 +153,28 @@ h2 {
             h2{
                 font-size: 5vmin;
             }
+            .info-card {
+                margin: 40px;
+            }
+        }
+        .info-card {
+            background-color: #bd2727; /* Black background color instead of shadow */
+            color: #fff; /* White text color for better contrast */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Adjusted box-shadow for a more prominent effect */
+            
+            text-align: center;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
   <script>
+    function redirectToDrive() {
+        window.location.href = "https://drive.google.com/file/d/1W0erINKhZjPK8F6ccV1BsXiu9mR88TSQ/view";
+    }
     window.onscroll = function() { stickyHeader() };
 
     function stickyHeader() {
@@ -168,7 +192,10 @@ h2 {
 <!-- 
     <h2 id="stickyHeader">Olympia 2024</h2> -->
 
-
+    <div class="info-card" onclick="redirectToDrive()">
+        <strong style="font-size: 30px; font-weight: bold; ">Olympia Brochure</strong> 
+    </div>
+    
 
 <ul>
     <li>
